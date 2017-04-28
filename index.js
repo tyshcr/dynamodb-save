@@ -12,8 +12,8 @@ const conference = function(json, conference, callback) {
     var items = [];
     for(var x in json['standing']) {
         if (json['standing'][x]['conference'] == conference) {
-            // console.log(json['standing'][x]['team_id'])
-            items.push({PutRequest: { Item: { "team_id": { "S": json['standing'][x]['team_id']}, "conference": { "S": json['standing'][x]['conference']}, "division": { "S": json['standing'][x]['division']} , "wins": { "N": json['standing'][x]['won'].toString()}, "losses": { "N": json['standing'][x]['lost'].toString()}, "rank": { "N": json['standing'][x]['rank'].toString()} }}});
+            // console.log(json['standing'][x]['first_name'])
+            items.push({PutRequest: { Item: { "team_id": { "S": json['standing'][x]['team_id']}, "conference": { "S": json['standing'][x]['conference']}, "division": { "S": json['standing'][x]['division']} , "wins": { "N": json['standing'][x]['won'].toString()}, "losses": { "N": json['standing'][x]['lost'].toString()}, "rank": { "N": json['standing'][x]['rank'].toString()}, "city": { "S": json['standing'][x]['first_name']}, "nickname": { "S": json['standing'][x]['last_name']} }}});
         }
     }
 
